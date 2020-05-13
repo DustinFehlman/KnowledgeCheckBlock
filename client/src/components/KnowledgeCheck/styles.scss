@@ -1,0 +1,163 @@
+$baseAlt: rgba(221, 221, 221, 0.77);
+$altFont: Lato, sans-serif !important;
+
+@media (max-width: 759px) {
+  .wrapper {
+    padding: 1rem 2rem 1rem;
+    width: 70%;
+    margin-left: auto;
+    margin-top: 1rem;
+    margin-right: auto;
+    box-shadow: 0 0.4rem 1.2rem 0.2rem rgba(0, 0, 0, .05);
+  }
+}
+
+@media (min-width: 760px) {
+  .wrapper {
+    border: 1px solid $baseAlt;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    width: 70%;
+    max-width: 640px;
+    padding: 3rem 6rem 4rem;
+    box-shadow: 0 0.4rem 1.2rem 0.2rem rgba(0, 0, 0, .05);
+    font-size: 100%;
+  }
+}
+
+.iconContainer{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.quizDivider {
+  border: .5px solid $baseAlt;
+}
+
+.kcAnswerOptionContainerPreSubmission {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  border: 1px solid white;
+}
+
+.kcAnswerOptionContainerSubmitted {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  border: 1px solid white;
+}
+
+.kcAnswerOptionContainerAnswered {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.kcAnswerOptionContainerAnswered:hover {
+  cursor: default;
+  background-color: #fff;
+}
+
+.kcAnswerOptionContainerPreSubmission:hover {
+  background-color: $baseAlt;
+  cursor: pointer;
+}
+
+.kcAnswerOptionLabel {
+  margin-left: 20px;
+}
+
+.customRadioContainer {
+  margin-left: 4px;
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  font-size: 1rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+.customRadioContainerSubmitted {
+  @extend .customRadioContainer;
+  cursor: default;
+}
+
+
+
+.customRadioContainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.radioFeedbackIcons{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.customRadio {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 16px;
+  width: 16px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  border: .5px solid $baseAlt;
+}
+
+.customRadio:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.customRadioContainer input:checked ~ .customRadio:after {
+  display: block;
+}
+
+.customRadioContainer .customRadio:after {
+  top: 6px;
+  left: 6px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.36);
+}
+
+.feedbackContainer {
+  padding-top: 1rem;
+  padding-bottom: 1.5rem;
+  margin-top: 1rem;
+  background-color: $baseAlt;
+  text-align: center;
+}
+
+.tryAgainButtonContainer{
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.tryAgainButtonContainer:hover{
+  opacity: .5;
+  cursor: pointer;
+}
+
+.altText {
+  font-family: $altFont;
+  text-transform: uppercase;
+  font-size: 1rem;
+}

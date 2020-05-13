@@ -1,0 +1,32 @@
+.button {
+  font-family: Lato, sans-serif !important;
+  cursor: pointer;
+  width: 50%;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  font-size: 0.8rem;
+  line-height: 3.4rem;
+  text-overflow: ellipsis;
+  color: #fff;
+  border: 2px solid transparent;
+  border-radius: 2rem;
+  box-sizing: border-box;
+  transition: background .3s, color .3s, opacity .3s;
+  background-color: #747a7e
+}
+
+.disabledButton {
+  @extend .button;
+  background-color: silver;
+  cursor: default;
+}
+
+.buttonContainer {
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
