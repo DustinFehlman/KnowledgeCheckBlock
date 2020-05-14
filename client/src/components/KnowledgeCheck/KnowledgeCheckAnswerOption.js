@@ -6,13 +6,13 @@ function KnowledgeCheckAnswerOption({answer, selectedAnswer, setSelectedAnswer, 
     const isChecked = selectedAnswer === answer;
     return (
         <div className={_getContainerClassName(submittedAnswer, answer)} onClick={() => setSelectedAnswer(answer)}>
-            <label id={answer.id}
+            <label id={answer.id ? answer.id : "No id provided"}
                    className={submittedAnswer ? "customRadioContainerSubmitted" : "customRadioContainer"}>
                 {submittedAnswer &&
                 <div className={"radioFeedbackIcons"}>
                     <FontAwesomeIcon icon={answer.isCorrect ? faThumbsUp : faThumbsDown}/>
                 </div>}
-                {answer.text}
+                {answer.text ? answer.text : "No text provided"}
                 {!submittedAnswer && <input type="radio"
                                             value={answer}
                                             checked={isChecked}
