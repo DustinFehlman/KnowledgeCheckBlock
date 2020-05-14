@@ -1,7 +1,7 @@
-$baseAlt: rgba(221, 221, 221, 0.77);
+$baseAlt: rgba(238, 232, 232, 0.88);
 $altFont: Lato, sans-serif !important;
 
-@media (max-width: 759px) {
+@media (max-width: 999px) {
   .wrapper {
     padding: 1rem 2rem 1rem;
     width: 70%;
@@ -12,22 +12,101 @@ $altFont: Lato, sans-serif !important;
   }
 }
 
-@media (min-width: 760px) {
+@media (min-width: 1000px) {
   .wrapper {
     border: 1px solid $baseAlt;
     box-sizing: border-box;
     margin-left: auto;
     margin-right: auto;
     margin-top: 1rem;
-    width: 70%;
-    max-width: 640px;
+    width: 55%;
+    max-width: 60rem;
+    min-height: 48rem;
     padding: 3rem 6rem 4rem;
     box-shadow: 0 0.4rem 1.2rem 0.2rem rgba(0, 0, 0, .05);
-    font-size: 100%;
   }
 }
 
-.iconContainer{
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes highLight {
+  0% {
+    border: 1px solid white
+  }
+  100% {
+    border: 1px solid black
+  }
+}
+
+.displayNone {
+  display: none;
+}
+
+.highLight {
+  border: 1px solid white;
+  -webkit-animation-name: highLight;
+  animation-name: highLight;
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.fadeOut {
+  opacity: 1;
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.fadeIn {
+  opacity: 0;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.iconContainer {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -35,6 +114,11 @@ $altFont: Lato, sans-serif !important;
 
 .quizDivider {
   border: .5px solid $baseAlt;
+}
+
+
+.submitButtonContainerActive {
+  @extend .fadeIn
 }
 
 .kcAnswerOptionContainerPreSubmission {
@@ -54,11 +138,11 @@ $altFont: Lato, sans-serif !important;
 }
 
 .kcAnswerOptionContainerAnswered {
+  @extend .highLight;
   width: 100%;
   height: 60px;
   display: flex;
   align-items: center;
-  border: 1px solid black;
 }
 
 .kcAnswerOptionContainerAnswered:hover {
@@ -88,13 +172,10 @@ $altFont: Lato, sans-serif !important;
   user-select: none;
 }
 
-
 .customRadioContainerSubmitted {
   @extend .customRadioContainer;
   cursor: default;
 }
-
-
 
 .customRadioContainer input {
   position: absolute;
@@ -102,7 +183,7 @@ $altFont: Lato, sans-serif !important;
   cursor: pointer;
 }
 
-.radioFeedbackIcons{
+.radioFeedbackIcons {
   position: absolute;
   top: 0;
   left: 0;
@@ -139,20 +220,48 @@ $altFont: Lato, sans-serif !important;
 }
 
 .feedbackContainer {
-  padding-top: 1rem;
-  padding-bottom: 1.5rem;
+  @extend .fadeOut;
+  animation-delay: 0s;
+  max-height: 0;
+  margin-top: 0;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  top: 0;
+  transition: max-height 1.2s linear 1.2s;
+}
+
+.feedbackContainerActive {
+  @extend .fadeIn;
+  position: relative;
+  top: -5rem;
+  animation-delay: .5s;
   margin-top: 1rem;
   background-color: $baseAlt;
   text-align: center;
+  max-height: 100rem;
+  padding-top: .4rem;
+  padding-bottom: .4rem;
+  transition: max-height 1s linear .3s;
 }
 
-.tryAgainButtonContainer{
+.tryAgainButtonContainer {
+  @extend .fadeOut;
+  opacity: 0;
+  position: relative;
+  top: 0;
+}
+
+.tryAgainButtonContainerActive {
+  @extend .fadeIn;
+  animation-delay: .5s;
   text-align: center;
-  margin-top: 3rem;
+  position: relative;
+  top: -3rem;
 }
 
-.tryAgainButtonContainer:hover{
-  opacity: .5;
+.tryAgainButtonContainerActive:hover {
+  color: #acabab;
   cursor: pointer;
 }
 
