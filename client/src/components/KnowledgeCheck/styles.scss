@@ -264,14 +264,14 @@ $altFont: Lato, sans-serif !important;
   overflow: hidden;
   text-align: center;
   position: relative;
-  top: -5rem;
+  top: -2.5rem;
   transition: max-height 1s linear .25s;
 }
 
 .tryAgainButtonContainerActive {
   @extend .fadeIn;
   position: relative;
-  top: -5rem;
+  top: -2.5rem;
   animation-delay: 1s;
   text-align: center;
   max-height: 100rem;
