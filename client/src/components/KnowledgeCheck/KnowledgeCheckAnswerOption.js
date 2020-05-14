@@ -6,7 +6,8 @@ function KnowledgeCheckAnswerOption({answer, selectedAnswer, setSelectedAnswer, 
     const isChecked = selectedAnswer === answer;
     return (
         <div className={_getContainerClassName(submittedAnswer, answer)} onClick={() => setSelectedAnswer(answer)}>
-            <label className={submittedAnswer ? "customRadioContainerSubmitted" : "customRadioContainer"}>
+            <label id={answer.id}
+                   className={submittedAnswer ? "customRadioContainerSubmitted" : "customRadioContainer"}>
                 {submittedAnswer &&
                 <div className={"radioFeedbackIcons"}>
                     <FontAwesomeIcon icon={answer.isCorrect ? faThumbsUp : faThumbsDown}/>
@@ -16,7 +17,8 @@ function KnowledgeCheckAnswerOption({answer, selectedAnswer, setSelectedAnswer, 
                                             value={answer}
                                             checked={isChecked}
                                             readOnly={true}/>}
-                {!submittedAnswer && <span className="customRadio"></span>}
+                {!submittedAnswer &&
+                <span role="radiogroup" aria-labelledby={answer.id} className="customRadio"></span>}
             </label>
         </div>
     )
