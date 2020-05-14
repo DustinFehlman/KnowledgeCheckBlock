@@ -1,18 +1,26 @@
 @-webkit-keyframes fadeIn {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeIn {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-.displayNone{
+.displayNone {
   display: none;
 }
 
-.fadeIn{
+.fadeIn {
   opacity: 0;
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;

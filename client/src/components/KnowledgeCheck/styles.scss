@@ -8,6 +8,7 @@ $altFont: Lato, sans-serif !important;
     margin-left: auto;
     margin-top: 1rem;
     margin-right: auto;
+    max-height: 60rem;
     box-shadow: 0 0.4rem 1.2rem 0.2rem rgba(0, 0, 0, .05);
   }
 }
@@ -21,7 +22,7 @@ $altFont: Lato, sans-serif !important;
     margin-top: 1rem;
     width: 55%;
     max-width: 60rem;
-    min-height: 48rem;
+    min-height: 43rem;
     padding: 3rem 6rem 4rem;
     box-shadow: 0 0.4rem 1.2rem 0.2rem rgba(0, 0, 0, .05);
   }
@@ -116,9 +117,9 @@ $altFont: Lato, sans-serif !important;
   border: .5px solid $baseAlt;
 }
 
-
 .submitButtonContainerActive {
-  @extend .fadeIn
+  @extend .fadeIn;
+  animation-delay: .5s;
 }
 
 .kcAnswerOptionContainerPreSubmission {
@@ -221,14 +222,17 @@ $altFont: Lato, sans-serif !important;
 
 .feedbackContainer {
   @extend .fadeOut;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
   animation-delay: 0s;
+  margin-top: 1rem;
   max-height: 0;
-  margin-top: 0;
+  background-color: $baseAlt;
   overflow: hidden;
-  padding: 0;
+  text-align: center;
   position: relative;
-  top: 0;
-  transition: max-height 1.2s linear 1.2s;
+  top: -5rem;
+  transition: max-height 1s linear .25s;
 }
 
 .feedbackContainerActive {
@@ -240,24 +244,38 @@ $altFont: Lato, sans-serif !important;
   background-color: $baseAlt;
   text-align: center;
   max-height: 100rem;
-  padding-top: .4rem;
-  padding-bottom: .4rem;
-  transition: max-height 1s linear .3s;
+  transition: max-height 1s ease-in .3s;
+}
+
+.feedbackContainer svg {
+  margin-top: 10px;
+}
+
+.feedbackContainerActive svg {
+  margin-top: 10px;
 }
 
 .tryAgainButtonContainer {
   @extend .fadeOut;
-  opacity: 0;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  animation-delay: 0s;
+  max-height: 0;
+  overflow: hidden;
+  text-align: center;
   position: relative;
-  top: 0;
+  top: -5rem;
+  transition: max-height 1s linear .25s;
 }
 
 .tryAgainButtonContainerActive {
   @extend .fadeIn;
-  animation-delay: .5s;
-  text-align: center;
   position: relative;
-  top: -3rem;
+  top: -5rem;
+  animation-delay: 1s;
+  text-align: center;
+  max-height: 100rem;
+  transition: max-height 1s ease-in .3s;
 }
 
 .tryAgainButtonContainerActive:hover {

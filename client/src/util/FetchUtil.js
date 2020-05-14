@@ -7,7 +7,7 @@ export default class FetchUtil {
             const jsonBody = await response.json();
             if (response.ok) return jsonBody;
             return new FetchError(response, jsonBody);
-        }catch (e) {
+        } catch (e) {
             console.log(e);
         }
     }

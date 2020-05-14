@@ -2,7 +2,7 @@ import React from 'react';
 import "./styles.scss";
 
 function Button({onClick, isDisabled, value}) {
-    const activeClass = isDisabled ? "disabledButton": "button";
+    const activeClass = isDisabled ? "disabledButton" : "button";
     value = value || "";
 
     return (

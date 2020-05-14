@@ -50,40 +50,40 @@ function KnowledgeCheckContainer() {
     } = question;
 
     return (
-            <div className="wrapper">
-                {isLoading &&
-                <div className="iconContainer">
-                    <FontAwesomeIcon icon={faSpinner} size="4x" spin/>
-                </div>
-                }
-                {!isLoading && hasError &&
-                <div className="iconContainer">
-                    <FontAwesomeIcon icon={faExclamationCircle} size="4x"/>
-                    <p>There was an error loading this block.</p>
-                </div>
-                }
-                {!isLoading && !hasError &&
-                <>
-                    <KnowledgeCheckQuestion
-                        question={
-                            {
-                                "text": data.text,
-                                "img": data.imgUrl
-                            }
-                        }
-                    />
-                    <hr className="quizDivider"/>
-                    {_getAnswerOptions(data.answers, selectedAnswer, setSelectedAnswer, submittedAnswer)}
-                    <div className={!submittedAnswer ? "fadeIn" : "fadeOut"}>
-                        <Button value={"Submit"} isDisabled={!Boolean(selectedAnswer)}
-                                onClick={() => _submitAnswer(selectedAnswer, setSubmittedAnswer)}/>
-                    </div>
-                    <KnowledgeCheckFeedback submittedAnswer={submittedAnswer}/>
-                    <KnowledgeCheckTryAgainButton submittedAnswer={submittedAnswer}
-                                                  resetState={() => _resetState(setSubmittedAnswer, setSelectedAnswer)}/>
-                </>
-                }
+        <div className="wrapper">
+            {isLoading &&
+            <div className="iconContainer">
+                <FontAwesomeIcon icon={faSpinner} size="4x" spin/>
             </div>
+            }
+            {!isLoading && hasError &&
+            <div className="iconContainer">
+                <FontAwesomeIcon icon={faExclamationCircle} size="4x"/>
+                <p>There was an error loading this block.</p>
+            </div>
+            }
+            {!isLoading && !hasError &&
+            <>
+                <KnowledgeCheckQuestion
+                    question={
+                        {
+                            "text": data.text,
+                            "img": data.imgUrl
+                        }
+                    }
+                />
+                <hr className="quizDivider"/>
+                {_getAnswerOptions(data.answers, selectedAnswer, setSelectedAnswer, submittedAnswer)}
+                <div className={!submittedAnswer ? "submitButtonContainerActive" : "fadeOut"}>
+                    <Button value={"Submit"} isDisabled={!Boolean(selectedAnswer)}
+                            onClick={() => _submitAnswer(selectedAnswer, setSubmittedAnswer)}/>
+                </div>
+                <KnowledgeCheckFeedback submittedAnswer={submittedAnswer}/>
+                <KnowledgeCheckTryAgainButton submittedAnswer={submittedAnswer}
+                                              resetState={() => _resetState(setSubmittedAnswer, setSelectedAnswer)}/>
+            </>
+            }
+        </div>
     );
 }
 
