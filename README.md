@@ -1,12 +1,13 @@
 # Knowledge Check Block
 
-##Local Run
+## Local Run
 To run locally use ```yarn dev```
 
-##Run Test
+## Run Test
 To run test use ```yarn test```
 
-##Stack
+## Stack
 Built using React.JS, Express, and SASS
-##Live Demo
+
+## Live Demo
 [https://knowledge-block.herokuapp.com/](https://knowledge-block.herokuapp.com/)
